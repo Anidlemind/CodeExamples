@@ -1,0 +1,23 @@
+from src.bot import *
+
+bot_obj = ApplicationBuilder().token(token).build()
+
+start_handler = CommandHandler('start', start)
+elo_handler = CommandHandler('elo', elo)
+play_handler = CommandHandler('play_offline', play_offline)
+board_handler = CommandHandler('board', board)
+host_handler = CommandHandler('host', host)
+join_handler = CommandHandler('join', join)
+end_handler = CommandHandler('end', end)
+exit_handler = CommandHandler('exit', exit)
+move_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), move)
+bot_obj.add_handler(start_handler)
+bot_obj.add_handler(elo_handler)
+bot_obj.add_handler(play_handler)
+bot_obj.add_handler(board_handler)
+bot_obj.add_handler(move_handler)
+bot_obj.add_handler(end_handler)
+bot_obj.add_handler(host_handler)
+bot_obj.add_handler(join_handler)
+bot_obj.add_handler(exit_handler)
+bot_obj.run_polling()
