@@ -1,4 +1,4 @@
-# python_proj_2
+# ChessBot
 
 > This is a telegram bot that allows you to play with latest Stockfish version on your desired ELO.
 
